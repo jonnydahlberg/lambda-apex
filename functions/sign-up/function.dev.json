@@ -1,0 +1,8 @@
+{
+  "name": "sign-up",
+  "description": "Sign Up Users",
+  "runtime": "nodejs6.10",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::299778919327:role/lambda"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "dev",
+  "description": "Development project",
+  "environment": {
+    "CLIENT_ID": "756ccc4ne84njevq57ns25fkga"
+  }
+}
