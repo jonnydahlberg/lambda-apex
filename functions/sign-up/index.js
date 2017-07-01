@@ -1,23 +1,21 @@
-'use strict'
+'use strict';
 
 let AWS = require('aws-sdk');
-let cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
-
-const CLIENT_ID = process.env.CLIENT_ID
 
 exports.handle = function (event, context, callback) {
 
-	const password = event.password;
-	const UserAttributes = [];
+	let cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
+	const CLIENT_ID = process.env.CLIENT_ID;
+	const { password, firstName, lastName, email } = event;
 
 	var params = {
 		ClientId: CLIENT_ID,
-		Username: event.email,
+		Username: email,
 		Password: password,
 		UserAttributes: [
-			{ Name: 'email', Value: event.email },
-			{ Name: 'name', Value: event.name },
-			{ Name: 'family_name', Value: 'D' },
+			{ Name: 'email', Value: email },
+			{ Name: 'given_name', Value: firstName },
+			{ Name: 'family_name', Value: lastName },
 		]
 	};
 
@@ -26,7 +24,6 @@ exports.handle = function (event, context, callback) {
 			console.log(err, err.stack);
 			callback(err);
 		} else {
-			console.log(data);
 			callback(null, data);
 		}
 	});

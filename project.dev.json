@@ -2,6 +2,7 @@
   "name": "dev",
   "description": "Development project",
   "environment": {
-    "CLIENT_ID": "756ccc4ne84njevq57ns25fkga"
+    "CLIENT_ID": "756ccc4ne84njevq57ns25fkga",
+    "USER_POOL_ID": "eu-west-2_btS1au5AK"
   }
 }

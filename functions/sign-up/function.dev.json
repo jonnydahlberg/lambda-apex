@@ -1,6 +1,6 @@
 {
   "name": "sign-up",
-  "description": "Sign Up Users",
+  "description": "Sign up user",
   "runtime": "nodejs6.10",
   "memory": 128,
   "timeout": 5,
